@@ -5,7 +5,7 @@ import useFetchTicketsAndUsers from '../../hooks/useFetchTicketsAndUsers';
 import backlog from '../../assets/backlog.svg';
 import todo from '../../assets/todo.svg';
 import inProgress from '../../assets/inProgress.svg';
-import done from '../../assets/done.svg';
+import Done from '../../assets/done.svg';
 import cancelled from '../../assets/cancelled.svg'; 
 import add from '../../assets/add.svg';
 import threeDot from '../../assets/3dot.svg';
@@ -77,7 +77,7 @@ const KanbanStatus = ({ order }) => {
           <div className="column-header">
             <div className="column-header-left">
               <img
-                src={column.id === 'backlog' ? backlog : column.id === 'todo' ? todo : column.id === 'inProgress' ? inProgress : column.id === 'done' ? done : cancelled}
+                src={column.id === 'backlog' ? backlog : column.id === 'todo' ? todo : column.id === 'inProgress' ? inProgress : column.id === 'done' ? Done : cancelled}
                 alt={`${column.title} icon`}
                 className="column-icon"
               />
