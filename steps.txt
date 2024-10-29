@@ -1,0 +1,66 @@
+Step 1: Project Setup and Initial Structure
+Create a new React project using Create React App
+Plan your component hierarchy:
+App (main component)
+Navbar (for display button and grouping/sorting options)
+KanbanBoard (main board container)
+Column (for each group of tickets)
+Card (for individual tickets)
+Step 2: State Management
+Create necessary states in App.js:
+Create a function to fetch data from the API using useEffect
+Step 3: Display Button and Dropdown
+Create a Navbar component with:
+Display button that shows/hides grouping options
+Dropdown menu for grouping options (Status/User/Priority)
+Dropdown menu for sorting options (Priority/Title)
+Style it to match the design
+Save selected options to localStorage
+Step 4: Data Processing Functions
+Create utility functions to:
+Group tickets based on selected option:
+By Status: Create groups for each status
+By User: Group tickets by user.id
+By Priority: Create 5 groups (0-4)
+Sort tickets within each group:
+By Priority: Sort using priority numbers
+By Title: Sort alphabetically
+Step 5: Kanban Board Implementation
+Create KanbanBoard component that:
+Receives grouped/sorted data
+Renders Column components
+Create Column component that:
+Shows column header with count
+Renders Card components
+Handles column-specific styling
+Create Card component that:
+Displays ticket information
+Shows user avatar, priority, status
+Matches the design
+Step 6: Styling
+Create separate CSS files for each component
+Style components to match the design:
+Use appropriate colors and spacing
+Add icons for priority levels
+Style user avatars
+Add hover effects
+Make it responsive
+Step 7: Local Storage Implementation
+Save user preferences:
+2. Load saved preferences on page load
+Update localStorage when options change
+Step 8: Additional Features
+Add loading states while fetching data
+Implement error handling
+Add responsive design for mobile devices
+Add animations for smooth transitions
+Key Points to Remember:
+Use appropriate React hooks:
+useState for state management
+useEffect for API calls and side effects
+useRef if needed for DOM references
+Keep components modular and reusable
+Follow proper naming conventions
+Use CSS BEM methodology for better organization
+Add comments for complex logic
+Handle edge cases and loading states

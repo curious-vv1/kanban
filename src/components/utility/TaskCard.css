@@ -1,0 +1,123 @@
+.task-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 -1px 2px rgba(0, 0, 0, 0.1), 1px 0 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.task-id {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+
+.task-title {
+    font-size: 0.9375rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.priority-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.priority-label {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.task-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.user-color-0 {
+    background: #ed8068;
+    /* Example color */
+}
+
+.user-color-1 {
+    background-color: #a4ecb1;
+    /* Example color */
+}
+
+.user-color-2 {
+    background-color: #b8c4fb;
+    /* Example color */
+}
+
+.user-color-3 {
+    background: #f1add1;
+    /* Example color */
+}
+
+.user-status {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: #666;
+    position: relative;
+}
+
+.user-status.available::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: #28a745;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.user-status.unavailable::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: #c2bfc0;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.user-color-default {
+    background-color: #cccccc;
+    /* Fallback color */
+}
