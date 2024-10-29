@@ -6,7 +6,7 @@ import backlog from '../../assets/backlog.svg';
 import todo from '../../assets/todo.svg';
 import inProgress from '../../assets/inProgress.svg';
 import Done from '../../assets/Done.svg';
-import cancelled from '../../assets/cancelled.svg'; 
+import cancelled from '../../assets/Cancelled.svg'; 
 import add from '../../assets/add.svg';
 import threeDot from '../../assets/3dot.svg';
 
