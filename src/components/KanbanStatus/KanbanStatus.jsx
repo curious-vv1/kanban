@@ -1,7 +1,14 @@
-import { useState, useEffect } from 'react';
+
 import '../utility/Kanban.css';
-import TaskCard from '../utility/TaskCard'; // Import the TaskCard component
-import useFetchTicketsAndUsers from '../../hooks/useFetchTicketsAndUsers'; // Import the custom hook
+import TaskCard from '../utility/TaskCard'; 
+import useFetchTicketsAndUsers from '../../hooks/useFetchTicketsAndUsers'; 
+import backlog from '../../assets/backlog.svg';
+import todo from '../../assets/todo.svg';
+import inProgress from '../../assets/inProgress.svg';
+import done from '../../assets/done.svg';
+import cancelled from '../../assets/cancelled.svg'; 
+import add from '../../assets/add.svg';
+import threeDot from '../../assets/3dot.svg';
 
 const getPriorityIcon = (priority) => {
   const priorityMap = {
@@ -70,7 +77,7 @@ const KanbanStatus = ({ order }) => {
           <div className="column-header">
             <div className="column-header-left">
               <img
-                src={`/src/assets/${column.id}.svg`}
+                src={column.id === 'backlog' ? backlog : column.id === 'todo' ? todo : column.id === 'inProgress' ? inProgress : column.id === 'done' ? done : cancelled}
                 alt={`${column.title} icon`}
                 className="column-icon"
               />
@@ -79,12 +86,12 @@ const KanbanStatus = ({ order }) => {
             <div className="column-header-right">
               <span className="task-count">{column.tasks.length}</span>
               <img
-                src="/src/assets/add.svg"
+                src={add}
                 alt="Add task"
                 className="action-icon"
               />
               <img
-                src="/src/assets/3dot.svg"
+                src={threeDot}
                 alt="More options"
                 className="action-icon"
               />

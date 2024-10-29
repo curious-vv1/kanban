@@ -1,5 +1,10 @@
 import React from 'react';
 import './TaskCard.css';
+import noPriority from '../../assets/no-priority.svg';
+import low from '../../assets/low.svg';
+import medium from '../../assets/medium.svg';
+import high from '../../assets/high.svg';
+import urgent from '../../assets/urgent.svg';
 
 const TaskCard = ({ task, getUserById, getPriorityIcon }) => {
   const assignedUser = getUserById(task.userId);
@@ -30,7 +35,7 @@ const TaskCard = ({ task, getUserById, getPriorityIcon }) => {
       <div className="task-footer">
         <div className="priority-indicator">
           <img
-            src={`/src/assets/${getPriorityIcon(task.priority).icon}.svg`}
+            src={getPriorityIcon(task.priority).icon === 'no-priority' ? noPriority : getPriorityIcon(task.priority).icon === 'low' ? low : getPriorityIcon(task.priority).icon === 'medium' ? medium : getPriorityIcon(task.priority).icon === 'high' ? high : urgent}
             alt={getPriorityIcon(task.priority).label}
             className="priority-icon"
           />

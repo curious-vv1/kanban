@@ -2,6 +2,13 @@ import { useState, useEffect } from 'react';
 import '../utility/Kanban.css';
 import TaskCard from '../utility/TaskCard';
 import useFetchTicketsAndUsers from '../../hooks/useFetchTicketsAndUsers'; // Import the custom hook
+import add from '../../assets/add.svg';
+import threeDot from '../../assets/3dot.svg';
+import noPriority from '../../assets/no-priority.svg';
+import low from '../../assets/low.svg';
+import medium from '../../assets/medium.svg';
+import high from '../../assets/high.svg';
+import urgentRed from '../../assets/urgent-red.svg';
 
 const getPriorityIcon = (priority) => {
   const priorityMap = {
@@ -70,7 +77,7 @@ const KanbanPriority = ({ order }) => {
           <div className="column-header">
             <div className="column-header-left">
               <img
-                src={`/src/assets/${column.id}.svg`}
+                src={column.id === 'no-priority' ? noPriority : column.id === 'low' ? low : column.id === 'medium' ? medium : column.id === 'high' ? high : urgentRed}
                 alt={`${column.title} icon`}
                 className="column-icon"
               />
@@ -79,12 +86,12 @@ const KanbanPriority = ({ order }) => {
             <div className="column-header-right">
               <span className="task-count">{column.tasks.length}</span>
               <img
-                src="/src/assets/add.svg"
+                src={add}
                 alt="Add task"
                 className="action-icon"
               />
               <img
-                src="/src/assets/3dot.svg"
+                src={threeDot}
                 alt="More options"
                 className="action-icon"
               />
