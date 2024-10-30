@@ -25,6 +25,17 @@
     margin-bottom: 0.75rem;
 }
 
+.task-body {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.task-body-icon {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 0.75rem;
+}
+
 .task-footer {
     display: flex;
     justify-content: space-between;

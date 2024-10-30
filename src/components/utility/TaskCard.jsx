@@ -5,8 +5,14 @@ import low from '../../assets/low.svg';
 import medium from '../../assets/medium.svg';
 import high from '../../assets/high.svg';
 import urgent from '../../assets/urgent.svg';
+import done from '../../assets/Done.svg';
+import backlog from '../../assets/backlog.svg';
+import inProgress from '../../assets/inProgress.svg';
+import todo from '../../assets/todo.svg';
+import cancelled from '../../assets/Cancelled.svg';
 
-const TaskCard = ({ task, getUserById, getPriorityIcon }) => {
+
+const TaskCard = ({ task, getUserById, getPriorityIcon, currentGroup }) => {
   const assignedUser = getUserById(task.userId);
 
   const getUserColorClass = (userId) => {
@@ -31,7 +37,10 @@ const TaskCard = ({ task, getUserById, getPriorityIcon }) => {
           </div>
         </div>
       </div>
-      <div className="task-title">{task.title}</div>
+      <div className='task-body'>
+        {(currentGroup === 'User' || currentGroup === 'Priority') ? <img className='task-body-icon' src={task.status === 'Done' ? done : task.status === 'Backlog' ? backlog : task.status === 'In progress' ? inProgress : task.status === 'Todo' ? todo : cancelled} alt={task.status} /> : null}
+        <div className="task-title">{task.title}</div>
+      </div>
       <div className="task-footer">
         <div className="priority-indicator">
           <img

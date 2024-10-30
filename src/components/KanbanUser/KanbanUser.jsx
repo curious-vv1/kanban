@@ -91,6 +91,7 @@ const KanbanUser = ({ order }) => {
                                 task={task}
                                 getUserById={getUserById}
                                 getPriorityIcon={getPriorityIcon}
+                                currentGroup='User'
                             />
                         ))}
                     </div>

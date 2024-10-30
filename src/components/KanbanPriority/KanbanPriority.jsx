@@ -23,7 +23,7 @@ const getPriorityIcon = (priority) => {
 };
 
 const KanbanPriority = ({ order }) => {
-  const { tickets, users, loading } = useFetchTicketsAndUsers(); // Use the hook
+  const { tickets, users, loading } = useFetchTicketsAndUsers(); 
 
   const sortedTickets = [...tickets].sort((a, b) => {
     if (order === 'Title') {
@@ -104,6 +104,7 @@ const KanbanPriority = ({ order }) => {
                 task={task}
                 getUserById={getUserById}
                 getPriorityIcon={getPriorityIcon}
+                currentGroup='Priority'
               />
             ))}
           </div>
